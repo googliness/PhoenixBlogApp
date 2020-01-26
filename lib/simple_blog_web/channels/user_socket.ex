@@ -3,6 +3,7 @@ defmodule SimpleBlogWeb.UserSocket do
 
   ## Channels
   # channel "room:*", SimpleBlogWeb.RoomChannel
+  transport(:websocket, Phoenix.Transports.WebSocket, timeout: 45_000)
 
   # Socket params are passed from the client and can
   # be used to verify and authenticate a user. After
