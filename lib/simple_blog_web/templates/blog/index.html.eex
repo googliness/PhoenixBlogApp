@@ -1,0 +1,18 @@
+<h2 class="mb-0 mt-4">Our Blogs</h2>
+<p>Read, Write, Enjoy..</p>
+<hr>
+<div class="row">
+<%= for blog <- @blogs do %>
+    <div class="col">
+        <div class="card" style="width: 24rem;">
+          <img class="card-img-top" src="/images/phoenix.png" alt="Card image cap">
+          <div class="card-body">
+            <p class="card-text"><%= blog.title %></p>
+            <%= link "Read More", to: Routes.blog_path(@conn, :show, blog) %>
+          </div>
+        </div>
+    </div>
+<% end %>
+</div>
+<br>
+<strong><%= link "Write Your Blog", to: Routes.blog_path(@conn, :new)%></strong>
